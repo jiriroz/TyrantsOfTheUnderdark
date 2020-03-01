@@ -44,90 +44,43 @@ Earth Elemental,42,Elemental,Ambition,3,1,3,2
 Earth Elemental Myrmidon,43,Elemental,Ambition,4,2,4,2
 Marlos Urnrayle,44,Elemental,Ambition,5,2,5,1
 Ogremoch,45,Elemental,Ambition,6,3,7,1
-,46,,,,,,
-,47,,,,,,
-,48,,,,,,
-,49,,,,,,
-,50,,,,,,
-,51,,,,,,
-,52,,,,,,
-,53,,,,,,
-,54,,,,,,
-,55,,,,,,
-,56,,,,,,
-,57,,,,,,
-,58,,,,,,
-,59,,,,,,
-,60,,,,,,
-,61,,,,,,
-,62,,,,,,
-,63,,,,,,
-,64,,,,,,
-,65,,,,,,
-,66,,,,,,
-,67,,,,,,
-,68,,,,,,
-,69,,,,,,
-,70,,,,,,
-,71,,,,,,
-,72,,,,,,
-,73,,,,,,
-,74,,,,,,
-,75,,,,,,
-,76,,,,,,
-,77,,,,,,
-,78,,,,,,
-,79,,,,,,
-,80,,,,,,
-,81,,,,,,
-,82,,,,,,
-,83,,,,,,
-,84,,,,,,
-,85,,,,,,
-,86,,,,,,
-,87,,,,,,
-,88,,,,,,
-,89,,,,,,
-,90,,,,,,
-,91,,,,,,
-,92,,,,,,
-,93,,,,,,
-,94,,,,,,
-,95,,,,,,
-,96,,,,,,
-,97,,,,,,
-,98,,,,,,
-,99,,,,,,
-,100,,,,,,
-,101,,,,,,
-,102,,,,,,
-,103,,,,,,
-,104,,,,,,
-,105,,,,,,
-,106,,,,,,
-,107,,,,,,
-,108,,,,,,
-,109,,,,,,
-,110,,,,,,
-,111,,,,,,
-,112,,,,,,
-,113,,,,,,
-,114,,,,,,
-,115,,,,,,
-,116,,,,,,
-,117,,,,,,
-,118,,,,,,
-,119,,,,,,
-,120,,,,,,
-,121,,,,,,
-,122,,,,,,
-,123,,,,,,
-,124,,,,,,
-,125,,,,,,
-,126,,,,,,
-,127,,,,,,
-,128,,,,,,
-,129,,,,,,
-,130,,,,,,
-,131,,,,,,
-,132,,,,,,
+Ghoul,46,Demon,Malice,4,2,4,3
+Mind Flayer,47,Demon,Malice,3,1,3,3
+Glabrezu,48,Demon,Malice,5,2,4,1
+Marilith,49,Demon,Malice,6,2,5,2
+Orcus,50,Demon,Malice,8,5,10,1
+Gibbering Mouther,51,Demon,Conquest,2,1,3,3
+Derro,52,Demon,Conquest,3,1,4,2
+Ettin,53,Demon,Conquest,4,1,2,3
+Balor,54,Demon,Conquest,6,3,6,1
+Demogorgon,55,Demon,Conquest,8,5,10,1
+Night Hag,56,Demon,Guile,3,1,3,3
+Jackalwere,57,Demon,Guile,4,2,4,3
+Succubus,58,Demon,Guile,5,2,5,2
+Vrock,59,Demon,Guile,5,2,4,1
+Graz’zt,60,Demon,Guile,6,2,5,1
+Myconid Adult,61,Demon,Ambition,3,1,3,3
+Nalfeshnee,62,Demon,Ambition,5,2,5,2
+Hezrou,63,Demon,Ambition,3,1,3,2
+Myconid Sovereign,64,Demon,Ambition,4,2,5,2
+Zuggtmoy,65,Demon,Ambition,6,3,6,1
+Dragon Cultist,66,Dragon,Malice,3,1,4,4
+Red Wyrmling,67,Dragon,Malice,5,3,5,2
+Dragonclaw,68,Dragon,Malice,4,1,3,2
+Severin Silrajin,69,Dragon,Malice,7,4,8,1
+Red Dragon,70,Dragon,Malice,8,4,8,1
+Kobold,71,Dragon,Conquest,1,1,2,3
+White Wyrmling,72,Dragon,Conquest,2,1,3,3
+Black Wyrmling,73,Dragon,Conquest,3,1,4,2
+White Dragon,74,Dragon,Conquest,6,2,5,1
+Black Dragon,75,Dragon,Conquest,7,3,7,1
+Watcher of Thay,76,Dragon,Guile,3,2,3,3
+Enchanter of Thay,77,Dragon,Guile,4,1,3,3
+Green Wyrmling,78,Dragon,Guile,4,2,4,2
+Rath Modar,79,Dragon,Guile,6,2,5,1
+Green Dragon,80,Dragon,Guile,7,3,7,1
+Cult Fanatic,81,Dragon,Ambition,3,1,4,2
+Cleric of Laogzed,82,Dragon,Ambition,4,2,4,2
+Wyrmspeaker,83,Dragon,Ambition,3,1,3,3
+Blue Wyrmling,84,Dragon,Ambition,5,2,4,2
+Blue Dragon,85,Dragon,Ambition,8,4,8,1
