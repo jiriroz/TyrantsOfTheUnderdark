@@ -38,9 +38,9 @@ class Site:
             self.vpEndGame, self.influencePerTurn, self.isRoute
         ))
 
-def load_board():
+def load_board(board_file):
     rows = []
-    with open('board.csv') as f:
+    with open(board_file) as f:
         rows = [row for row in csv.DictReader(f, delimiter=',')]
 
     board = Board()
@@ -61,5 +61,5 @@ def load_board():
         board.sites[site.ID] = site
     return board
         
-board = load_board()
+board = load_board('board.csv')
 print (board)
