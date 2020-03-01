@@ -18,18 +18,19 @@ class Board:
         return s
 
 class Site:
-    ID = None
-    name = ''
-    adj = []
-    capacity = -1
-    troops = dict()
-    spies = dict()
-    isBlack = False
-    vpPerTurn = 0
-    vpEndGame = 0
-    influencePerTurn = 0
-    isRoute = False
-    graphicalMetadata = dict()
+    def __init__(self):
+        self.ID = None
+        self.name = ''
+        self.adj = []
+        self.capacity = -1
+        self.troops = dict()
+        self.spies = dict()
+        self.isBlack = False
+        self.vpPerTurn = 0
+        self.vpEndGame = 0
+        self.influencePerTurn = 0
+        self.isRoute = False
+        self.graphicalMetadata = dict()
 
     def __str__(self):
         return ("ID={} name={} adj={} capacity={} troops={} spies={} isBlack={} vpPerTurn={} vpEndGame={} influencePerTurn={} isRoute={}".format(
@@ -62,9 +63,3 @@ def load_board():
         
 board = load_board()
 print (board)
-
-for x in board.sites:
-    s = board.sites[x]
-    print (s.name, s.troops, s.troops[Color.WHITE])
-
-#TODO figure out why the troops aren't copying
