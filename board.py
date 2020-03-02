@@ -60,6 +60,7 @@ def load_board(board_file):
         site.adj = [int(x) for x in row['neighborIDs'].split(',')]
         board.sites[site.ID] = site
     return board
-        
-board = load_board('board.csv')
-print (board)
+
+if __name__ == '__main__':
+    board = load_board('board.csv')
+    print (board)

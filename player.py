@@ -44,3 +44,27 @@ class Player:
 
     def add_num_killed(color, count):
         self.trophy_hall[color] += count
+
+if __name__ == '__main__':
+    import cards
+    player = Player(board.Color.BLUE, 20, 20)
+    all_cards = cards.load_cards('cards.csv')
+    dragon = all_cards.get_by_deck(cards.Deck.DRAGON)
+    demon = all_cards.get_by_deck(cards.Deck.DEMON)
+    deck_cards = dragon + demon
+    random.shuffle(deck_cards)
+
+    for x in range(7):
+        player.add_card_to_deck(deck_cards[x])
+
+    player.new_hand()
+    print ("Hand")
+    for c in player.get_hand():
+        print (c)
+
+    player.new_hand()
+    print ("Hand")
+    for c in player.get_hand():
+        print (c)
+
+

@@ -69,7 +69,7 @@ if __name__ == '__main__':
     dragon = all_cards.get_by_deck(cards.Deck.DRAGON)
     demon = all_cards.get_by_deck(cards.Deck.DEMON)
     deck_cards = dragon + demon
-    random.shuffle(dragon + demon)
+    random.shuffle(deck_cards)
 
     num_priestesses = all_cards.get_by_name('Priestess of Lolth').count
     num_house_guards = all_cards.get_by_name('House Guard').count

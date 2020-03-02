@@ -35,6 +35,7 @@ class Card:
 class Cards:
     def __init__(self):
         self.cards = dict()
+        self.cards_by_name = dict()
     def __str__(self):
         s = ''
         for ID in self.cards:
@@ -44,7 +45,15 @@ class Cards:
 
     def add(self, card):
         self.cards[card.ID] = card
+        self.cards_by_name[card.name] = card
 
+    def get_by_name(self, name):
+        if name not in self.cards_by_name:
+            raise ValueError("Card {} doesn't exist".format(name))
+        return self.cards_by_name[name]
+
+    def get_by_deck(self, deck):
+        return [self.cards[id] for id in self.cards if self.cards[id].deck == deck]
 
 def load_cards(cards_file):
     def intOrNone(val):
@@ -72,5 +81,6 @@ def load_cards(cards_file):
         cards.add(card)
     return cards
 
-cards = load_cards('cards.csv')
-print (cards)
+if __name__ == '__main__':
+    cards = load_cards('cards.csv')
+    print (cards)
