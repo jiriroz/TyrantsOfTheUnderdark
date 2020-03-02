@@ -4,7 +4,9 @@ import board
 NUM_IN_HAND = 5
 
 class Player:
-    def __init__(self, color, num_troops, num_spies):
+    def __init__(self, ID, name, color, num_troops, num_spies):
+        self.ID = ID
+        self.name = name
         self.color = color
         self.hand = []
         self.deck = []
@@ -47,7 +49,7 @@ class Player:
 
 if __name__ == '__main__':
     import cards
-    player = Player(board.Color.BLUE, 20, 20)
+    player = Player(1, "Jiri", board.Color.ORANGE, 20, 20)
     all_cards = cards.load_cards('cards.csv')
     dragon = all_cards.get_by_deck(cards.Deck.DRAGON)
     demon = all_cards.get_by_deck(cards.Deck.DEMON)
