@@ -1,5 +1,5 @@
-import board as board_module
-import cards as cards_module
+from app import board as board_module
+from app import cards as cards_module
 
 
 class Game:
@@ -12,7 +12,7 @@ class Game:
     def add_player(self, player):
         self.players[player.ID] = player
 
-def new_game():
-    board = board_module.load_board('board.csv')
-    cards = cards_module.load_cards('cards.csv')
-    game = Game(board, cards)
+def new_game(id):
+    board = board_module.load_board('app/board.csv')
+    cards = cards_module.load_cards('app/cards.csv')
+    game = Game(id, board, cards)
