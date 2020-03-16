@@ -3,8 +3,8 @@ from app import game
 all_games = dict()
 top_id = 0
 
-def new_game():
+def new_game(player_choices):
     global top_id
     top_id += 1
-    all_games[top_id] = game.new_game(top_id)
+    all_games[top_id] = game.new_game(top_id, player_choices)
     return top_id

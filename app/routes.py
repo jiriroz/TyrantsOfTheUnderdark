@@ -16,4 +16,7 @@ def index():
 
 @app.route('/game/<int:id>')
 def game(id):
-    return "Loading game {}".format(id)
+    game = games_manager.get_game(id)
+    if game == None:
+        return "Game ID {} doesn't exist"
+    
