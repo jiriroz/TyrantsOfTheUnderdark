@@ -1,0 +1,11 @@
+<html>
+    <head>
+        <title>Tyrants of the Underdark</title>
+    </head>
+    <body>
+        <h1>Players</h1>
+        {% for player in game.players %}
+        <p>{{ game.players[player].name }}</p>
+        {% endfor %}
+    </body>
+</html>

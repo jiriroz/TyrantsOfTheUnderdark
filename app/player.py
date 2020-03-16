@@ -1,5 +1,5 @@
 import random
-import board
+from app import board
 
 NUM_IN_HAND = 5
 

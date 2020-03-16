@@ -33,8 +33,8 @@ def new_game(id, player_choices):
     board = board_module.load_board('app/board.csv')
     cards = cards_module.load_cards('app/cards.csv')
 
-    decks = random.sample([Deck.DROW, Deck.DEMON, Deck.DRAGON, Deck.ELEMENTAL, 2])
-    market_cards = cards.get_by_deck(decks[0]]) + cards.get_by_deck(decks[1])
+    decks = random.sample([Deck.DROW, Deck.DEMON, Deck.DRAGON, Deck.ELEMENTAL], 2)
+    market_cards = cards.get_by_deck(decks[0]) + cards.get_by_deck(decks[1])
     random.shuffle(market_cards)
     num_priestesses = cards.get_by_name("Priestess of Lolth").count
     num_houseguards = cards.get_by_name("House Guard").count

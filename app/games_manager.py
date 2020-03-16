@@ -8,3 +8,8 @@ def new_game(player_choices):
     top_id += 1
     all_games[top_id] = game.new_game(top_id, player_choices)
     return top_id
+
+def get_game(id):
+    if id not in all_games:
+        return None
+    return all_games[id]
