@@ -13,7 +13,6 @@ def load_games():
             all_games[game.ID] = game
             top_id = game.ID
 
-
 # This function is NOT thread safe
 def new_game(player_choices):
     global top_id

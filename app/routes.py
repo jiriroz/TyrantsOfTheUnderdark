@@ -17,10 +17,16 @@ def index():
     return render_template('index.html', user=user)
 
 
+@app.route('/gamedebug/<int:id>')
+def gamedebug(id):
+    game = games_manager.get_game(id)
+    if game == None:
+        return "Game ID {} doesn't exist".format(id)
+    return render_template('gamedebug.html', game=game)
+    
 @app.route('/game/<int:id>')
 def game(id):
     game = games_manager.get_game(id)
     if game == None:
         return "Game ID {} doesn't exist".format(id)
     return render_template('game.html', game=game)
-    
