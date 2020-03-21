@@ -31,6 +31,8 @@ class Card:
         return 'ID={} name={} deck={} aspect={} cost={} deckVP={} innerCircleVP={} count={}'.format(
             self.ID, self.name, self.deck, self.aspect, self.cost, self.deckVP, self.innerCircleVP, self.count
         )
+    def __repr__(self):
+        return str(self)
 
 class Cards:
     def __init__(self):

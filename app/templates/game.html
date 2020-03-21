@@ -6,6 +6,12 @@
         <h1>Players</h1>
         {% for player in game.players %}
         <p>{{ game.players[player].name }}</p>
+        <p>{{ game.players[player].color }}</p>
+        <p>
+        {% for card in game.players[player].deck %}
+        {{ card.name }}
+        {% endfor %}
+        </p>
         {% endfor %}
     </body>
 </html>
