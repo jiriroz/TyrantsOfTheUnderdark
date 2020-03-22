@@ -9,7 +9,8 @@ class Color(Enum):
     BLUE = 'Blue'
 
 class Board:
-    sites = dict()
+    def __init__(self):
+        self.sites = dict()
 
     def __str__(self):
         s = ''

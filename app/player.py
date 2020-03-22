@@ -29,7 +29,7 @@ class Player:
     def get_hand(self):
         return self.hand
 
-    def new_hand(self):   
+    def draw_hand(self):   
         self.discard_pile.extend(self.hand)
         self.hand = []
         to_draw = min(Player.NUM_IN_HAND, len(self.deck))
@@ -49,6 +49,9 @@ class Player:
     def add_num_killed(color, count):
         self.trophy_hall[color] += count
 
+    def shuffle_deck(self):
+        random.shuffle(self.deck)
+
 if __name__ == '__main__':
     import cards
     player = Player(1, "Jiri", board.Color.ORANGE)
@@ -61,12 +64,12 @@ if __name__ == '__main__':
     for x in range(7):
         player.add_card_to_deck(deck_cards[x])
 
-    player.new_hand()
+    player.draw_hand()
     print ("Hand")
     for c in player.get_hand():
         print (c)
 
-    player.new_hand()
+    player.draw_hand()
     print ("Hand")
     for c in player.get_hand():
         print (c)

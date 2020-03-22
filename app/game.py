@@ -33,6 +33,8 @@ class Game:
             card = self.cards.get_by_name(name)
             for x in range(base_deck[name]):
                 player.add_card_to_deck(card)
+        player.shuffle_deck()
+        player.draw_hand()
         self.current_player = random.choice(list(self.players.keys()))
         return player_id
 

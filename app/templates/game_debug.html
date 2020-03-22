@@ -5,20 +5,58 @@
     <body>
         <p><b>Turn</b></p>
         <p>{{ game.players[game.current_player].name }}</p>
-        {% for player in game.players %}
-        <p><b>{{ game.players[player].name }}</b></p>
-        <p>{{ game.players[player].color }}</p>
-        <p>
-        {% for card in game.players[player].deck %}
-        {{ card.name }}
-        {% endfor %}
-        </p>
-        {% endfor %}
         <p><b>Market</b></p>
         <p>
         {% for card in game.market.cards_face_up %}
         {{ card.name }}
         {% endfor %}
         </p>
+        <p>Priestesses: {{game.market.num_priestesses}}</p>
+        <p>House Guards: {{game.market.num_house_guards}}</p>
+        <p>Outcasts: {{game.market.num_outcasts}}</p>
+        {% for player in game.players %}
+        <p><b>{{ game.players[player].name }}</b></p>
+        <p>{{ game.players[player].color }}</p>
+        <p> Troops: {{ game.players[player].num_troops }} Spies: {{ game.players[player].num_spies }} </p>
+        <p>
+        Hand:
+        {% for card in game.players[player].hand %}
+        {{ card.name }}
+        {% endfor %}
+        </p>
+        <p>
+        Deck:
+        {% for card in game.players[player].deck %}
+        {{ card.name }}
+        {% endfor %}
+        </p>
+        <p>
+        Discard pile:
+        {% for card in game.players[player].discard_pile %}
+        {{ card.name }}
+        {% endfor %}
+        </p>
+        <p>
+        Inner circle:
+        {% for card in game.players[player].inner_circle %}
+        {{ card.name }}
+        {% endfor %}
+        </p>
+        <p>
+        Trophy hall:
+        {% for color in game.players[player].trophy_hall %}
+        {{ color }} : {{ game.players[player].trophy_hall[color] }}
+        {% endfor %}
+        </p>
+        {% endfor %}
+        <p><b>Board</b></p>
+        {% for site in game.board.sites %}
+        <p>
+        {{ game.board.sites[site].name }}
+        {% for color in game.board.sites[site].troops %}
+            {{ color }} : {{ game.board.sites[site].troops[color] }}
+        {% endfor %}
+        </p>
+        {% endfor %}
     </body>
 </html>
