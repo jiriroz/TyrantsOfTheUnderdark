@@ -26,7 +26,7 @@ class Game:
         if not self.players:
             player_id = 1
         else:
-            player_id = max([self.play.keys()]) + 1
+            player_id = max(list(self.players.keys())) + 1
         player = Player(player_id, name, color)
         self.players[player_id] = player
         for name in base_deck:

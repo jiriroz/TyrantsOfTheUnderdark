@@ -1,5 +1,6 @@
 
 class Market:
+    NUM_CARDS_FACE_UP = 6
     """
     @param all_cards cards.Cards
     @param cards_in_deck list
@@ -9,26 +10,25 @@ class Market:
     """
     def __init__(self, all_cards, cards_in_deck, num_priestesses, num_house_guards, num_outcasts):
         self.all_cards = all_cards
-        self.num_market_cards = 6
-        self.market_cards = []
+        self.cards_face_up = []
         self.cards_in_deck = cards_in_deck
         self.num_priestesses = num_priestesses
         self.num_house_guards = num_house_guards
         self.num_outcasts = num_outcasts
         self.cards_devoured = []
 
-        for x in range(self.num_market_cards):
-            self.market_cards.append(self.cards_in_deck.pop())
+        for x in range(Market.NUM_CARDS_FACE_UP):
+            self.cards_face_up.append(self.cards_in_deck.pop())
 
-    def get_market_cards(self):
-        return self.market_cards
+    def get_cards_face_up(self):
+        return self.cards_face_up
 
     def draw_market_card(self, index):
-        assert index < self.num_market_cards
-        card = self.market_cards[index]
-        self.market_cards[index] = None
+        assert index < Market.NUM_CARDS_FACE_UP
+        card = self.cards_face_up[index]
+        self.cards_face_up[index] = None
         if len(self.cards_in_deck) > 0:
-            self.market_cards[index] = self.cards_in_deck.pop()
+            self.cards_face_up[index] = self.cards_in_deck.pop()
         return card
 
     def get_num_priestesses(self):
@@ -78,14 +78,14 @@ if __name__ == '__main__':
     market = Market(all_cards, deck_cards, num_priestesses, num_house_guards, num_outcasts)
 
     print ("Market cards")
-    for c in market.get_market_cards():
+    for c in market.get_cards_face_up():
         print (c)
     print ("Draw card")
     print (market.draw_market_card(1))
     print ("Draw card")
     print (market.draw_market_card(5))
     print ("Market cards")
-    for c in market.get_market_cards():
+    for c in market.get_cards_face_up():
         print (c)
     print ("Draw priestess")
     print (market.draw_priestess())

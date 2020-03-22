@@ -11,7 +11,7 @@ def newgame():
     gameid = games_manager.get_next_id()
     return redirect(url_for('gamesetup', gameid=gameid))
 
-@app.route('/gamesetup/<int:gameid>',  methods=['GET', 'POST'])
+@app.route('/gamesetup/<string:gameid>',  methods=['GET', 'POST'])
 def gamesetup(gameid):
     player_form = PlayerSetupForm()
     if player_form.validate_on_submit():
@@ -24,11 +24,12 @@ def gamesetup(gameid):
         name = player_form.name.data
         col = Color(player_form.color.data)
         player_id = game.add_player(name, col)
+        games_manager.save_game(game)
 
         if 'active_games' not in session:
             session['active_games'] = dict()
     
-        session['active_games'][str(gameid)] = {'player_id' : str(player_id)}
+        session['active_games'][gameid] = {'player_id' : str(player_id)}
         session.modified = True
         return redirect(url_for('gamedebug', id=gameid))
     
@@ -42,7 +43,7 @@ def index():
     return render_template('index.html', user=user)
 
 
-@app.route('/gamedebug/<int:id>')
+@app.route('/gamedebug/<string:id>')
 def gamedebug(id):
     game = games_manager.get_game(id)
     if game == None:

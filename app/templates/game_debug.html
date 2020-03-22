@@ -3,9 +3,10 @@
         <title>Tyrants of the Underdark</title>
     </head>
     <body>
-        <h1>Players</h1>
+        <p><b>Turn</b></p>
+        <p>{{ game.players[game.current_player].name }}</p>
         {% for player in game.players %}
-        <p>{{ game.players[player].name }}</p>
+        <p><b>{{ game.players[player].name }}</b></p>
         <p>{{ game.players[player].color }}</p>
         <p>
         {% for card in game.players[player].deck %}
@@ -13,5 +14,11 @@
         {% endfor %}
         </p>
         {% endfor %}
+        <p><b>Market</b></p>
+        <p>
+        {% for card in game.market.cards_face_up %}
+        {{ card.name }}
+        {% endfor %}
+        </p>
     </body>
 </html>
