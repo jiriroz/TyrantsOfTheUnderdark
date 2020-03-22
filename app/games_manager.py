@@ -1,9 +1,20 @@
 from app import game
 import pickle
 from pathlib import Path
+import random
 
 all_games = dict()
-top_id = 0
+temp_hold_id = set()
+
+def get_next_id():
+    # I know, this doesn't really scale
+    # Also this is NOT thread safe
+    while True:
+        id = random.randint(1, 1000000000)
+        if id in all_games or id in temp_hold_id:
+            continue
+        temp_hold_id.add(id)
+        return id
 
 def load_games():
     games_path = Path(__file__).parent.absolute() / 'games'
@@ -11,17 +22,14 @@ def load_games():
         with open(g, 'rb') as f:
             game = pickle.load(f)
             all_games[game.ID] = game
-            top_id = game.ID
 
-# This function is NOT thread safe
-def new_game(player_choices):
-    global top_id
-    top_id += 1
-    all_games[top_id] = game.new_game(top_id, player_choices)
-    game_path = Path(__file__).parent.absolute() / 'games' / 'game{}.pickle'.format(top_id)
+def new_game(id, deck_choices):
+    all_games[id] = game.new_game(id, deck_choices)
+    temp_hold_id.discard(id)
+    game_path = Path(__file__).parent.absolute() / 'games' / 'game{}.pickle'.format(id)
     with open(game_path, "wb") as f:
-        pickle.dump(all_games[top_id], f) 
-    return top_id
+        pickle.dump(all_games[id], f)
+    return all_games[id]
 
 def get_game(id):
     if id not in all_games:

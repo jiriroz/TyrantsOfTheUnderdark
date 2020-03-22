@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Tyrants of the Underdark</title>
+    </head>
+    <body>
+        <h1>Game setup</h1>
+        <form action="" method="post" novalidate>
+            {{ player_form.hidden_tag() }}
+            <p>
+                {{ player_form.name.label }}<br>
+                {{ player_form.name(size=32) }}
+            </p>
+            <p>
+                {{ player_form.color.label }}<br>
+                {{ player_form.color() }}
+            </p>
+            <p>{{ player_form.submit() }}</p>
+        </form>
+    </body>
+</html>

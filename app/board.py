@@ -2,11 +2,11 @@ import csv
 from enum import Enum
 
 class Color(Enum):
-    WHITE = 1
-    RED = 2
-    BLACK = 3
-    ORANGE = 4
-    BLUE = 5
+    WHITE = 'White'
+    RED = 'Red'
+    BLACK = 'Black'
+    ORANGE = 'Orange'
+    BLUE = 'Blue'
 
 class Board:
     sites = dict()
