@@ -50,7 +50,7 @@ def gamedebug(id):
         return "Game ID {} doesn't exist".format(id)
     return render_template('game_debug.html', game=game)
     
-@app.route('/game/<int:id>')
+@app.route('/game/<string:id>')
 def game(id):
     game = games_manager.get_game(id)
     if game == None:
